@@ -71,6 +71,12 @@ class GameView @JvmOverloads constructor(
         isAntiAlias = true
     }
 
+    private val rectPaint = Paint().apply {
+        style = Paint.Style.FILL
+        color = Color.WHITE
+        isAntiAlias = true
+    }
+
     private var grid = mutableListOf<Dot>()
     private var paths = mutableMapOf<Int, Path>()
     private var currentColor: Int? = null
@@ -612,11 +618,6 @@ class GameView @JvmOverloads constructor(
         }
     }
 
-    private val rectPaint = Paint().apply {
-        style = Paint.Style.FILL
-        color = Color.WHITE
-        isAntiAlias = true
-    }
 
 
     private fun findNearestDot(x: Float, y: Float): Dot? {
